@@ -6,33 +6,33 @@ const testimonials = [
   {
     id: 1,
     name: "Sarah Johnson",
-    role: "Regular Customer",
+    role: "Project Manager at TechCorp",
     image: "https://i.pravatar.cc/150?img=33",
-    content: "This café is my second home. The staff remembers my order, the coffee is always perfect, and the atmosphere is so inviting. I come here to work at least three times a week!",
+    content: "Alex delivered our project ahead of schedule and with exceptional quality. Their technical expertise and clear communication made the entire process smooth and efficient.",
     rating: 5
   },
   {
     id: 2,
     name: "Michael Thompson",
-    role: "Local Business Owner",
+    role: "Founder, StartupVision",
     image: "https://i.pravatar.cc/150?img=12",
-    content: "I've tried coffee shops all over the city, and Café Bistro consistently serves the best espresso I've ever had. Their croissants are also worth waking up early for!",
+    content: "Working with Alex was a game-changer for our startup. They not only built a scalable platform but also provided valuable insights that improved our business model.",
     rating: 5
   },
   {
     id: 3,
     name: "Emily Davis",
-    role: "Writer",
+    role: "UX Designer",
     image: "https://i.pravatar.cc/150?img=5",
-    content: "I've written half my novel sitting at my favorite corner table here. The ambient music, delicious coffee, and friendly service create the perfect creative environment.",
+    content: "Alex has a rare combination of technical brilliance and design sensibility. They transformed our wireframes into a beautiful, functional application that our users love.",
     rating: 4
   },
   {
     id: 4,
     name: "David Wilson",
-    role: "Food Blogger",
+    role: "CTO, FinTech Solutions",
     image: "https://i.pravatar.cc/150?img=65",
-    content: "As someone who reviews cafés professionally, I can say with confidence that this place gets everything right - from the ethically sourced beans to the skillfully prepared drinks and delightful pastries.",
+    content: "I've worked with many developers, but Alex stands out for their problem-solving abilities and attention to detail. They consistently delivered high-quality code that required minimal revisions.",
     rating: 5
   }
 ];
@@ -84,10 +84,10 @@ const Testimonials = () => {
       <div className="container-custom">
         <div className="text-center max-w-3xl mx-auto mb-12">
           <span className="text-primary font-medium">TESTIMONIALS</span>
-          <h2 className="section-title mt-2">What Our Customers Say</h2>
+          <h2 className="section-title mt-2">Client Feedback</h2>
           <p className="text-muted-foreground">
-            We're proud to have created a welcoming space where our guests love to return. 
-            Here's what some of our regular customers have to say.
+            I take pride in delivering exceptional work that exceeds expectations. 
+            Here's what some of my clients have to say about our collaborations.
           </p>
         </div>
 

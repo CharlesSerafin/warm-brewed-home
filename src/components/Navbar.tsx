@@ -30,9 +30,9 @@ const Navbar = () => {
       <div className="container-custom flex items-center justify-between">
         <a href="/" className="flex items-center gap-2">
           <div className="w-10 h-10 rounded-full bg-cafe-700 flex items-center justify-center">
-            <span className="text-white font-bold">CB</span>
+            <span className="text-white font-bold">AM</span>
           </div>
-          <span className="text-xl font-serif font-semibold">Café Bistro</span>
+          <span className="text-xl font-serif font-semibold">Alex Morgan</span>
         </a>
 
         {/* Desktop menu */}
@@ -44,16 +44,16 @@ const Navbar = () => {
             <a href="#about" className="text-foreground hover:text-primary transition-colors">About</a>
           </li>
           <li>
-            <a href="#menu" className="text-foreground hover:text-primary transition-colors">Menu</a>
+            <a href="#projects" className="text-foreground hover:text-primary transition-colors">Projects</a>
           </li>
           <li>
             <a href="#testimonials" className="text-foreground hover:text-primary transition-colors">Testimonials</a>
           </li>
           <li>
-            <a href="#location" className="text-foreground hover:text-primary transition-colors">Visit Us</a>
+            <a href="#contact" className="text-foreground hover:text-primary transition-colors">Contact</a>
           </li>
           <li>
-            <a href="#contact" className="btn-primary">Contact</a>
+            <a href="#" className="btn-primary">Resume</a>
           </li>
         </ul>
 
@@ -94,11 +94,11 @@ const Navbar = () => {
           </li>
           <li>
             <a 
-              href="#menu" 
+              href="#projects" 
               className="block py-2 px-4 hover:bg-secondary/50 rounded-md transition-colors"
               onClick={toggleMenu}
             >
-              Menu
+              Projects
             </a>
           </li>
           <li>
@@ -112,20 +112,20 @@ const Navbar = () => {
           </li>
           <li>
             <a 
-              href="#location" 
+              href="#contact" 
               className="block py-2 px-4 hover:bg-secondary/50 rounded-md transition-colors"
               onClick={toggleMenu}
             >
-              Visit Us
+              Contact
             </a>
           </li>
           <li>
             <a 
-              href="#contact" 
+              href="#" 
               className="block py-2 px-4 bg-primary text-primary-foreground rounded-md"
               onClick={toggleMenu}
             >
-              Contact
+              Resume
             </a>
           </li>
         </ul>

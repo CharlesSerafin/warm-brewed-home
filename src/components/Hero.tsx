@@ -12,11 +12,11 @@ const Hero = () => {
     <div className="relative h-screen overflow-hidden">
       {/* Background image with overlay */}
       <div className="absolute inset-0 z-0">
-        <div className="absolute inset-0 bg-black/40 z-10" />
+        <div className="absolute inset-0 bg-black/60 z-10" />
         <div 
           className="absolute inset-0 bg-center bg-cover z-0"
           style={{ 
-            backgroundImage: `url('https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80')`,
+            backgroundImage: `url('https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80')`,
             backgroundPosition: 'center 30%',
             transform: isLoaded ? 'scale(1)' : 'scale(1.05)',
             transition: 'transform 1.5s ease-out'
@@ -27,18 +27,18 @@ const Hero = () => {
       {/* Content */}
       <div className="relative h-full z-10 flex flex-col justify-center items-center text-center text-white container-custom px-4">
         <div className={`transition-all duration-1000 delay-300 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-          <span className="inline-block mb-4 text-sm md:text-base uppercase tracking-widest border-b border-white/30 pb-2">Welcome to</span>
-          <h1 className="text-5xl md:text-7xl font-bold mb-6 tracking-tight">Café Bistro</h1>
+          <span className="inline-block mb-4 text-sm md:text-base uppercase tracking-widest border-b border-white/30 pb-2">Welcome to my portfolio</span>
+          <h1 className="text-5xl md:text-7xl font-bold mb-6 tracking-tight">Alex Morgan</h1>
           <p className="text-xl md:text-2xl max-w-2xl mx-auto mb-8 text-white/90">
-            Artisan coffee & delicious pastries in a cozy atmosphere. 
-            Your perfect spot for great conversations.
+            Full-stack developer specializing in creating elegant, 
+            responsive, and user-friendly web applications.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="#menu" className="btn-primary">
-              View Our Menu
+            <a href="#projects" className="btn-primary">
+              View My Work
             </a>
-            <a href="#location" className="bg-white/10 backdrop-blur-sm border border-white/30 text-white px-6 py-3 rounded-md hover:bg-white/20 transition-colors">
-              Visit Us
+            <a href="#contact" className="bg-white/10 backdrop-blur-sm border border-white/30 text-white px-6 py-3 rounded-md hover:bg-white/20 transition-colors">
+              Contact Me
             </a>
           </div>
         </div>

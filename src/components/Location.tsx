@@ -1,5 +1,5 @@
 
-import { MapPin, Clock, Phone, Mail } from 'lucide-react';
+import { MapPin, Mail, Phone, Laptop } from 'lucide-react';
 import { useEffect, useRef } from 'react';
 
 const Location = () => {
@@ -26,52 +26,93 @@ const Location = () => {
   }, []);
 
   return (
-    <section id="location" ref={sectionRef} className="py-20 md:py-28">
+    <section id="contact" ref={sectionRef} className="py-20 md:py-28">
       <div className="container-custom">
         <div className="text-center max-w-3xl mx-auto mb-12">
-          <span className="text-primary font-medium reveal">VISIT US</span>
-          <h2 className="section-title mt-2 reveal">Find Our Café</h2>
+          <span className="text-primary font-medium reveal">GET IN TOUCH</span>
+          <h2 className="section-title mt-2 reveal">Contact Me</h2>
           <p className="text-muted-foreground reveal">
-            We're conveniently located in the heart of downtown. 
-            Come visit us for a warm cup of coffee and a friendly atmosphere.
+            Have a project in mind or want to discuss potential opportunities?
+            I'd love to hear from you. Reach out through any of the channels below.
           </p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-8">
           <div className="lg:col-span-3 reveal">
             <div className="bg-muted h-96 rounded-xl overflow-hidden relative">
-              <iframe 
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2624.2518621768937!2d2.3347050769770667!3d48.87315270162858!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66e2964e34e2d%3A0x8ddca9ee380ef7e0!2sPlace%20de%20l&#39;Op%C3%A9ra%2C%2075009%20Paris%2C%20France!5e0!3m2!1sen!2sus!4v1688292184525!5m2!1sen!2sus" 
-                className="w-full h-full border-0" 
-                loading="lazy" 
-                referrerPolicy="no-referrer-when-downgrade"
-                title="Map to our café"
-              ></iframe>
-              <div className="absolute inset-0 pointer-events-none shadow-[inset_0_0_15px_rgba(0,0,0,0.1)]"></div>
+              <form className="h-full flex flex-col p-8">
+                <h3 className="text-2xl font-semibold mb-6">Send a Message</h3>
+                
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                  <div>
+                    <label htmlFor="name" className="block text-sm font-medium mb-1">Name</label>
+                    <input 
+                      type="text" 
+                      id="name" 
+                      className="w-full px-4 py-2 rounded-md border border-input bg-background focus:outline-none focus:ring-1 focus:ring-primary"
+                      placeholder="Your name"
+                    />
+                  </div>
+                  <div>
+                    <label htmlFor="email" className="block text-sm font-medium mb-1">Email</label>
+                    <input 
+                      type="email" 
+                      id="email" 
+                      className="w-full px-4 py-2 rounded-md border border-input bg-background focus:outline-none focus:ring-1 focus:ring-primary"
+                      placeholder="your.email@example.com"
+                    />
+                  </div>
+                </div>
+                
+                <div className="mb-4">
+                  <label htmlFor="subject" className="block text-sm font-medium mb-1">Subject</label>
+                  <input 
+                    type="text" 
+                    id="subject" 
+                    className="w-full px-4 py-2 rounded-md border border-input bg-background focus:outline-none focus:ring-1 focus:ring-primary"
+                    placeholder="What is this regarding?"
+                  />
+                </div>
+                
+                <div className="mb-6">
+                  <label htmlFor="message" className="block text-sm font-medium mb-1">Message</label>
+                  <textarea 
+                    id="message" 
+                    rows={4} 
+                    className="w-full px-4 py-2 rounded-md border border-input bg-background focus:outline-none focus:ring-1 focus:ring-primary resize-none"
+                    placeholder="Your message..."
+                  ></textarea>
+                </div>
+                
+                <div className="mt-auto">
+                  <button type="submit" className="btn-primary w-full">
+                    Send Message
+                  </button>
+                </div>
+              </form>
             </div>
           </div>
           <div className="lg:col-span-2 reveal">
             <div className="bg-card rounded-xl shadow-sm p-8 h-full">
-              <h3 className="text-2xl font-semibold mb-6">Opening Hours & Contact</h3>
+              <h3 className="text-2xl font-semibold mb-6">Contact Information</h3>
               
               <div className="flex items-start gap-4 mb-6">
                 <div className="bg-secondary/70 p-2 rounded-lg mt-1">
                   <MapPin size={20} className="text-primary" />
                 </div>
                 <div>
-                  <h4 className="font-medium mb-1">Address</h4>
-                  <p className="text-muted-foreground">123 Coffee Lane<br />Downtown District, City 10001</p>
+                  <h4 className="font-medium mb-1">Location</h4>
+                  <p className="text-muted-foreground">San Francisco, California<br />United States</p>
                 </div>
               </div>
               
               <div className="flex items-start gap-4 mb-6">
                 <div className="bg-secondary/70 p-2 rounded-lg mt-1">
-                  <Clock size={20} className="text-primary" />
+                  <Mail size={20} className="text-primary" />
                 </div>
                 <div>
-                  <h4 className="font-medium mb-1">Hours</h4>
-                  <p className="text-muted-foreground">Monday - Friday: 7:00 AM - 8:00 PM<br />
-                  Saturday - Sunday: 8:00 AM - 9:00 PM</p>
+                  <h4 className="font-medium mb-1">Email</h4>
+                  <p className="text-muted-foreground">hello@alexmorgan.dev</p>
                 </div>
               </div>
               
@@ -81,23 +122,23 @@ const Location = () => {
                 </div>
                 <div>
                   <h4 className="font-medium mb-1">Phone</h4>
-                  <p className="text-muted-foreground">(123) 456-7890</p>
+                  <p className="text-muted-foreground">(+1) 555-123-4567</p>
                 </div>
               </div>
               
               <div className="flex items-start gap-4">
                 <div className="bg-secondary/70 p-2 rounded-lg mt-1">
-                  <Mail size={20} className="text-primary" />
+                  <Laptop size={20} className="text-primary" />
                 </div>
                 <div>
-                  <h4 className="font-medium mb-1">Email</h4>
-                  <p className="text-muted-foreground">info@cafebistro.com</p>
+                  <h4 className="font-medium mb-1">Availability</h4>
+                  <p className="text-muted-foreground">Available for freelance projects<br />and full-time opportunities</p>
                 </div>
               </div>
               
               <div className="mt-8">
-                <a href="#contact" className="btn-primary w-full text-center block">
-                  Contact Us
+                <a href="#" className="btn-secondary w-full text-center block">
+                  Download Resume
                 </a>
               </div>
             </div>

@@ -152,9 +152,7 @@ const FeaturedMenu = () => {
                 </div>
               </div>
               <div className="p-6">
-                <div className="flex justify-between items-start mb-2">
-                  <h3 className="text-xl font-semibold">{project.name}</h3>
-                </div>
+                <h3 className="text-xl font-semibold mb-2">{project.name}</h3>
                 <p className="text-muted-foreground text-sm mb-4">{project.description}</p>
                 <div className="flex flex-wrap gap-2 mb-4">
                   {project.tech.map((tech, i) => (
@@ -167,6 +165,7 @@ const FeaturedMenu = () => {
                   <a 
                     href={project.githubUrl} 
                     className="flex items-center justify-center gap-1 flex-1 py-2 border border-primary/20 rounded-md text-primary hover:bg-primary/5 transition-colors text-sm"
+                    aria-label={`View code for ${project.name}`}
                   >
                     <Github size={16} />
                     <span>Code</span>
@@ -174,6 +173,7 @@ const FeaturedMenu = () => {
                   <a 
                     href={project.liveUrl} 
                     className="flex items-center justify-center gap-1 flex-1 py-2 border border-primary/20 rounded-md text-primary hover:bg-primary/5 transition-colors text-sm"
+                    aria-label={`View live demo for ${project.name}`}
                   >
                     <ExternalLink size={16} />
                     <span>Demo</span>

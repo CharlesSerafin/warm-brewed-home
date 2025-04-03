@@ -31,27 +31,29 @@ const About = () => {
         <div className="flex flex-col md:flex-row items-center gap-10 md:gap-16">
           <div className="w-full md:w-1/2 order-2 md:order-1">
             <span className="text-primary font-medium reveal">ABOUT ME</span>
-            <h2 className="section-title mt-2 reveal">Computer Science Student with a Passion for Web Development</h2>
+            <h2 className="section-title mt-2 reveal">Passionate Developer Building Digital Experiences</h2>
             <p className="text-muted-foreground leading-relaxed mb-6 reveal">
-              I'm a dedicated Computer Science student with a focus on web development and software engineering. My academic journey has equipped me with strong foundations in algorithms, data structures, and various programming paradigms.
+              I'm a full-stack developer with a focus on creating elegant, responsive, and user-friendly applications. 
+              With a strong foundation in both front-end and back-end technologies, I bring ideas to life through clean code and thoughtful design.
             </p>
             <p className="text-muted-foreground leading-relaxed mb-6 reveal">
-              Beyond my coursework, I'm passionate about applying theoretical knowledge to practical projects. I enjoy building responsive web applications and exploring new technologies to expand my skill set. I'm particularly interested in creating digital experiences that are both functional and aesthetically pleasing.
+              I'm passionate about learning new technologies and approaches to continually improve my craft. 
+              My goal is to build intuitive digital experiences that solve real problems and delight users.
             </p>
             <div className="flex items-center gap-8 mt-8 reveal">
               <div className="flex flex-col items-center">
-                <span className="text-3xl font-bold text-primary mb-1">3+</span>
-                <span className="text-sm text-muted-foreground">Years Coding</span>
+                <span className="text-3xl font-bold text-primary mb-1">5+</span>
+                <span className="text-sm text-muted-foreground">Years Experience</span>
               </div>
               <div className="h-10 w-px bg-border"></div>
               <div className="flex flex-col items-center">
-                <span className="text-3xl font-bold text-primary mb-1">12+</span>
+                <span className="text-3xl font-bold text-primary mb-1">20+</span>
                 <span className="text-sm text-muted-foreground">Projects Completed</span>
               </div>
               <div className="h-10 w-px bg-border"></div>
               <div className="flex flex-col items-center">
-                <span className="text-3xl font-bold text-primary mb-1">5+</span>
-                <span className="text-sm text-muted-foreground">Hackathons</span>
+                <span className="text-3xl font-bold text-primary mb-1">10+</span>
+                <span className="text-sm text-muted-foreground">Happy Clients</span>
               </div>
             </div>
           </div>
@@ -70,8 +72,8 @@ const About = () => {
                 <div className="flex items-center gap-3">
                   <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="lucide lucide-code-2"><path d="m18 16 4-4-4-4"/><path d="m6 8-4 4 4 4"/><path d="m14.5 4-5 16"/></svg>
                   <div>
-                    <h4 className="font-medium">CS Student</h4>
-                    <p className="text-xs text-muted-foreground">Learning & Building</p>
+                    <h4 className="font-medium">Problem Solver</h4>
+                    <p className="text-xs text-muted-foreground">Tackling challenges with code</p>
                   </div>
                 </div>
               </div>

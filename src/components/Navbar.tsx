@@ -1,7 +1,6 @@
 
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
-import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -29,29 +28,29 @@ const Navbar = () => {
       }`}
     >
       <div className="container-custom flex items-center justify-between">
-        <Link to="/" className="flex items-center gap-2">
+        <a href="/" className="flex items-center gap-2">
           <div className="w-10 h-10 rounded-full bg-cafe-700 flex items-center justify-center">
-            <span className="text-white font-bold">CU</span>
+            <span className="text-white font-bold">AM</span>
           </div>
-          <span className="text-xl font-serif font-semibold">Charles Ungsod</span>
-        </Link>
+          <span className="text-xl font-serif font-semibold">Alex Morgan</span>
+        </a>
 
         {/* Desktop menu */}
         <ul className="hidden md:flex items-center gap-8">
           <li>
-            <Link to="/" className="text-foreground hover:text-primary transition-colors">Home</Link>
+            <a href="#" className="text-foreground hover:text-primary transition-colors">Home</a>
           </li>
           <li>
-            <Link to="/about" className="text-foreground hover:text-primary transition-colors">About</Link>
+            <a href="#about" className="text-foreground hover:text-primary transition-colors">About</a>
           </li>
           <li>
-            <a href="/#projects" className="text-foreground hover:text-primary transition-colors">Projects</a>
+            <a href="#projects" className="text-foreground hover:text-primary transition-colors">Projects</a>
           </li>
           <li>
-            <a href="/#testimonials" className="text-foreground hover:text-primary transition-colors">Testimonials</a>
+            <a href="#testimonials" className="text-foreground hover:text-primary transition-colors">Testimonials</a>
           </li>
           <li>
-            <a href="/#contact" className="text-foreground hover:text-primary transition-colors">Contact</a>
+            <a href="#contact" className="text-foreground hover:text-primary transition-colors">Contact</a>
           </li>
           <li>
             <a href="#" className="btn-primary">Resume</a>
@@ -76,26 +75,26 @@ const Navbar = () => {
       >
         <ul className="container-custom flex flex-col py-4 gap-4">
           <li>
-            <Link 
-              to="/" 
+            <a 
+              href="#" 
               className="block py-2 px-4 hover:bg-secondary/50 rounded-md transition-colors"
               onClick={toggleMenu}
             >
               Home
-            </Link>
+            </a>
           </li>
           <li>
-            <Link 
-              to="/about" 
+            <a 
+              href="#about" 
               className="block py-2 px-4 hover:bg-secondary/50 rounded-md transition-colors"
               onClick={toggleMenu}
             >
               About
-            </Link>
+            </a>
           </li>
           <li>
             <a 
-              href="/#projects" 
+              href="#projects" 
               className="block py-2 px-4 hover:bg-secondary/50 rounded-md transition-colors"
               onClick={toggleMenu}
             >
@@ -104,7 +103,7 @@ const Navbar = () => {
           </li>
           <li>
             <a 
-              href="/#testimonials" 
+              href="#testimonials" 
               className="block py-2 px-4 hover:bg-secondary/50 rounded-md transition-colors"
               onClick={toggleMenu}
             >
@@ -113,7 +112,7 @@ const Navbar = () => {
           </li>
           <li>
             <a 
-              href="/#contact" 
+              href="#contact" 
               className="block py-2 px-4 hover:bg-secondary/50 rounded-md transition-colors"
               onClick={toggleMenu}
             >

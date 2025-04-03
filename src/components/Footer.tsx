@@ -1,3 +1,4 @@
+
 import { useState } from 'react';
 import { Github, Linkedin, Twitter, Mail } from 'lucide-react';
 
@@ -21,12 +22,12 @@ const Footer = () => {
           <div>
             <div className="flex items-center gap-2 mb-4">
               <div className="w-10 h-10 rounded-full bg-cafe-500 flex items-center justify-center">
-                <span className="text-white font-bold">CU</span>
+                <span className="text-white font-bold">AM</span>
               </div>
-              <span className="text-xl font-serif font-semibold">Charles Ungsod</span>
+              <span className="text-xl font-serif font-semibold">Alex Morgan</span>
             </div>
             <p className="text-cafe-200 mb-6">
-              Computer Science student passionate about web development, software engineering, and creating user-friendly applications.
+              Full-stack developer passionate about creating elegant, efficient, and user-friendly web applications.
             </p>
             <div className="flex gap-4">
               <a 
@@ -114,12 +115,12 @@ const Footer = () => {
         </div>
 
         <div className="separator">
-          <span>Charles Ungsod</span>
+          <span>Alex Morgan</span>
         </div>
 
         <div className="text-center pt-8">
           <p className="text-cafe-400 text-sm">
-            © {new Date().getFullYear()} Charles Ungsod. All rights reserved.
+            © {new Date().getFullYear()} Alex Morgan. All rights reserved.
           </p>
         </div>
       </div>

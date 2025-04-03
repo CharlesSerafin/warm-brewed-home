@@ -30,9 +30,9 @@ const Navbar = () => {
       <div className="container-custom flex items-center justify-between">
         <a href="/" className="flex items-center gap-2">
           <div className="w-10 h-10 rounded-full bg-cafe-700 flex items-center justify-center">
-            <span className="text-white font-bold">AM</span>
+            <span className="text-white font-bold">CU</span>
           </div>
-          <span className="text-xl font-serif font-semibold">Alex Morgan</span>
+          <span className="text-xl font-serif font-semibold">Charles Ungsod</span>
         </a>
 
         {/* Desktop menu */}

@@ -28,9 +28,9 @@ const Hero = () => {
       <div className="relative h-full z-10 flex flex-col justify-center items-center text-center text-white container-custom px-4">
         <div className={`transition-all duration-1000 delay-300 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
           <span className="inline-block mb-4 text-sm md:text-base uppercase tracking-widest border-b border-white/30 pb-2">Welcome to my portfolio</span>
-          <h1 className="text-5xl md:text-7xl font-bold mb-6 tracking-tight">Alex Morgan</h1>
+          <h1 className="text-5xl md:text-7xl font-bold mb-6 tracking-tight">Charles Ungsod</h1>
           <p className="text-xl md:text-2xl max-w-2xl mx-auto mb-8 text-white/90">
-            Full-stack developer specializing in creating elegant, 
+            Computer Science student passionate about creating elegant, 
             responsive, and user-friendly web applications.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">

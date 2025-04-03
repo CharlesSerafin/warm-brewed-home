@@ -1,26 +1,977 @@
+
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>warm-brewed-home</title>
-    <meta name="description" content="Lovable Generated Project" />
-    <meta name="author" content="Lovable" />
-
-    <meta property="og:title" content="Lovable Generated Project" />
-    <meta property="og:description" content="Lovable Generated Project" />
-    <meta property="og:type" content="website" />
-    <meta property="og:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
-
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@lovable_dev" />
-    <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
-  </head>
-
-  <body>
-    <div id="root"></div>
-    <!-- IMPORTANT: DO NOT REMOVE THIS SCRIPT TAG OR THIS VERY COMMENT! -->
-    <script src="https://cdn.gpteng.co/gptengineer.js" type="module"></script>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Charles Ungsod - Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    /* Base styles */
+    :root {
+      --background: 40 30% 98%;
+      --foreground: 30 10% 15%;
+      --primary: 28 40% 40%;
+      --primary-foreground: 40 30% 98%;
+      --secondary: 25 25% 90%;
+      --secondary-foreground: 30 10% 15%;
+      --muted: 30 10% 96%;
+      --muted-foreground: 30 10% 40%;
+      --border: 30 10% 90%;
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    html {
+      scroll-behavior: smooth;
+    }
+    
+    body {
+      font-family: 'Source Sans 3', sans-serif;
+      background-color: hsl(var(--background));
+      color: hsl(var(--foreground));
+    }
+    
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Playfair Display', serif;
+    }
+    
+    /* Utility classes */
+    .container {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 0 1rem;
+    }
+    
+    .btn-primary {
+      background-color: hsl(var(--primary));
+      color: hsl(var(--primary-foreground));
+      padding: 0.75rem 1.5rem;
+      border-radius: 0.375rem;
+      font-size: 1rem;
+      font-weight: 500;
+      text-decoration: none;
+      transition: all 0.3s;
+      display: inline-block;
+    }
+    
+    .btn-primary:hover {
+      background-color: hsl(var(--primary) / 0.9);
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    }
+    
+    .btn-secondary {
+      background-color: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(4px);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      color: white;
+      padding: 0.75rem 1.5rem;
+      border-radius: 0.375rem;
+      font-size: 1rem;
+      font-weight: 500;
+      text-decoration: none;
+      transition: all 0.3s;
+      display: inline-block;
+    }
+    
+    .btn-secondary:hover {
+      background-color: rgba(255, 255, 255, 0.2);
+    }
+    
+    .text-muted {
+      color: hsl(var(--muted-foreground));
+    }
+    
+    .section-title {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      line-height: 1.2;
+    }
+    
+    @media (min-width: 768px) {
+      .section-title {
+        font-size: 3rem;
+      }
+    }
+    
+    /* Header/Navbar styles */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      padding: 1rem 0;
+      transition: all 0.3s;
+      z-index: 50;
+    }
+    
+    header.scrolled {
+      background-color: hsla(var(--background) / 0.8);
+      backdrop-filter: blur(8px);
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+      padding: 0.5rem 0;
+    }
+    
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      text-decoration: none;
+      color: inherit;
+    }
+    
+    .logo-circle {
+      width: 2.5rem;
+      height: 2.5rem;
+      border-radius: 50%;
+      background-color: #8B5A2B;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: 700;
+    }
+    
+    .logo-text {
+      font-size: 1.25rem;
+      font-weight: 600;
+      font-family: 'Playfair Display', serif;
+    }
+    
+    .nav-links {
+      display: none;
+    }
+    
+    @media (min-width: 768px) {
+      .nav-links {
+        display: flex;
+        gap: 2rem;
+        align-items: center;
+        list-style: none;
+      }
+    }
+    
+    .nav-links a {
+      color: inherit;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    
+    .nav-links a:hover {
+      color: hsl(var(--primary));
+    }
+    
+    .mobile-menu-btn {
+      display: block;
+      background: none;
+      border: none;
+      color: inherit;
+      cursor: pointer;
+    }
+    
+    @media (min-width: 768px) {
+      .mobile-menu-btn {
+        display: none;
+      }
+    }
+    
+    .mobile-menu {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background-color: hsla(var(--background) / 0.95);
+      backdrop-filter: blur(8px);
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+      padding: 1rem;
+      transform: translateY(-1rem);
+      opacity: 0;
+      pointer-events: none;
+      transition: all 0.3s;
+    }
+    
+    .mobile-menu.active {
+      transform: translateY(0);
+      opacity: 1;
+      pointer-events: auto;
+    }
+    
+    .mobile-menu ul {
+      list-style: none;
+    }
+    
+    .mobile-menu li {
+      margin-bottom: 0.5rem;
+    }
+    
+    .mobile-menu a {
+      display: block;
+      padding: 0.5rem 1rem;
+      color: inherit;
+      text-decoration: none;
+      border-radius: 0.375rem;
+      transition: background-color 0.3s;
+    }
+    
+    .mobile-menu a:hover {
+      background-color: hsl(var(--secondary) / 0.5);
+    }
+    
+    /* Hero section */
+    .hero {
+      position: relative;
+      height: 100vh;
+      overflow: hidden;
+    }
+    
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+    }
+    
+    .hero-bg::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-color: rgba(0, 0, 0, 0.6);
+      z-index: 10;
+    }
+    
+    .hero-bg-image {
+      position: absolute;
+      inset: 0;
+      background-image: url('https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+      background-size: cover;
+      background-position: center 30%;
+      z-index: 0;
+    }
+    
+    .hero-content {
+      position: relative;
+      height: 100%;
+      z-index: 10;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: white;
+      padding: 0 1rem;
+    }
+    
+    .avatar {
+      width: 8rem;
+      height: 8rem;
+      border-radius: 50%;
+      border: 4px solid rgba(255, 255, 255, 0.2);
+      margin-bottom: 1.5rem;
+      overflow: hidden;
+    }
+    
+    .avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    
+    .welcome-text {
+      display: inline-block;
+      margin-bottom: 1rem;
+      font-size: 0.875rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+      padding-bottom: 0.5rem;
+    }
+    
+    @media (min-width: 768px) {
+      .welcome-text {
+        font-size: 1rem;
+      }
+    }
+    
+    .hero h1 {
+      font-size: 3rem;
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+      letter-spacing: -0.025em;
+    }
+    
+    @media (min-width: 768px) {
+      .hero h1 {
+        font-size: 4.5rem;
+      }
+    }
+    
+    .hero p {
+      font-size: 1.25rem;
+      max-width: 36rem;
+      margin: 0 auto 2rem;
+      color: rgba(255, 255, 255, 0.9);
+    }
+    
+    @media (min-width: 768px) {
+      .hero p {
+        font-size: 1.5rem;
+      }
+    }
+    
+    .hero-buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+    
+    @media (min-width: 640px) {
+      .hero-buttons {
+        flex-direction: row;
+      }
+    }
+    
+    .scroll-indicator {
+      position: absolute;
+      bottom: 2.5rem;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    
+    .scroll-text {
+      font-size: 0.875rem;
+      color: rgba(255, 255, 255, 0.7);
+    }
+    
+    .scroll-icon {
+      width: 1.25rem;
+      height: 2.5rem;
+      border: 2px solid rgba(255, 255, 255, 0.3);
+      border-radius: 1rem;
+      display: flex;
+      justify-content: center;
+    }
+    
+    .scroll-dot {
+      width: 0.25rem;
+      height: 0.5rem;
+      background-color: rgba(255, 255, 255, 0.7);
+      border-radius: 9999px;
+      margin-top: 0.5rem;
+      animation: bounce 1.5s infinite;
+    }
+    
+    @keyframes bounce {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(6px);
+      }
+    }
+    
+    /* About section */
+    .about {
+      padding: 5rem 0;
+      background-color: hsl(var(--secondary) / 0.3);
+    }
+    
+    .about-container {
+      display: flex;
+      flex-direction: column;
+      gap: 2.5rem;
+    }
+    
+    @media (min-width: 768px) {
+      .about-container {
+        flex-direction: row;
+        align-items: center;
+      }
+    }
+    
+    .about-content {
+      width: 100%;
+      order: 2;
+    }
+    
+    @media (min-width: 768px) {
+      .about-content {
+        width: 50%;
+        order: 1;
+      }
+    }
+    
+    .about-tag {
+      color: hsl(var(--primary));
+      font-weight: 500;
+    }
+    
+    .about-image-container {
+      width: 100%;
+      order: 1;
+    }
+    
+    @media (min-width: 768px) {
+      .about-image-container {
+        width: 50%;
+        order: 2;
+      }
+    }
+    
+    .about-image-wrapper {
+      position: relative;
+    }
+    
+    .about-image-bg {
+      position: absolute;
+      inset: 0;
+      background-color: hsl(43, 74%, 49%);
+      transform: translate(-1.5rem, -1.5rem);
+      border-radius: 0.5rem;
+    }
+    
+    .about-image {
+      position: relative;
+      overflow: hidden;
+      border-radius: 0.5rem;
+      background-color: white;
+      padding: 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .about-avatar {
+      width: 16rem;
+      height: 16rem;
+      border-radius: 50%;
+      border: 4px solid hsla(var(--primary) / 0.2);
+      overflow: hidden;
+    }
+    
+    .about-avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    
+    .about-badge {
+      position: absolute;
+      bottom: -1.5rem;
+      right: -1.5rem;
+      background-color: white;
+      border-radius: 0.5rem;
+      padding: 1rem;
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    }
+    
+    .about-badge-content {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    
+    .about-badge-icon {
+      width: 2rem;
+      height: 2rem;
+    }
+    
+    .about-badge-text h4 {
+      font-weight: 500;
+    }
+    
+    .about-badge-text p {
+      font-size: 0.75rem;
+      color: hsl(var(--muted-foreground));
+    }
+    
+    .stats {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+    
+    .stat {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    .stat-number {
+      font-size: 1.875rem;
+      font-weight: 700;
+      color: hsl(var(--primary));
+      margin-bottom: 0.25rem;
+    }
+    
+    .stat-label {
+      font-size: 0.875rem;
+      color: hsl(var(--muted-foreground));
+    }
+    
+    .divider {
+      height: 2.5rem;
+      width: 1px;
+      background-color: hsl(var(--border));
+    }
+    
+    /* Footer */
+    footer {
+      background-color: #8B5A2B;
+      color: white;
+      padding: 4rem 0 2rem;
+    }
+    
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+      margin-bottom: 3rem;
+    }
+    
+    @media (min-width: 768px) {
+      .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    
+    @media (min-width: 1024px) {
+      .footer-grid {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+    
+    .footer-brand {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-bottom: 1rem;
+    }
+    
+    .footer-brand-circle {
+      width: 2.5rem;
+      height: 2.5rem;
+      border-radius: 50%;
+      background-color: #a57a47;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: 700;
+    }
+    
+    .footer-brand-text {
+      font-size: 1.25rem;
+      font-weight: 600;
+      font-family: 'Playfair Display', serif;
+    }
+    
+    .footer-description {
+      color: #e0c6ad;
+      margin-bottom: 1.5rem;
+    }
+    
+    .footer-socials {
+      display: flex;
+      gap: 1rem;
+    }
+    
+    .social-link {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 2.5rem;
+      height: 2.5rem;
+      background-color: #744c24;
+      border-radius: 50%;
+      color: white;
+      transition: background-color 0.3s;
+    }
+    
+    .social-link:hover {
+      background-color: #5e3d1c;
+    }
+    
+    .footer-heading {
+      font-size: 1.125rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+    
+    .footer-links {
+      list-style: none;
+    }
+    
+    .footer-links li {
+      margin-bottom: 0.5rem;
+    }
+    
+    .footer-links a {
+      color: #e0c6ad;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    
+    .footer-links a:hover {
+      color: white;
+    }
+    
+    .newsletter-form {
+      display: flex;
+      margin-bottom: 1rem;
+    }
+    
+    .newsletter-input {
+      flex-grow: 1;
+      padding: 0.5rem 1rem;
+      background-color: #744c24;
+      color: white;
+      border: 1px solid #5e3d1c;
+      border-radius: 0.375rem 0 0 0.375rem;
+      outline: none;
+    }
+    
+    .newsletter-input::placeholder {
+      color: #b5a090;
+    }
+    
+    .newsletter-button {
+      padding: 0.5rem 1rem;
+      background-color: #a57a47;
+      color: white;
+      border: none;
+      border-radius: 0 0.375rem 0.375rem 0;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    
+    .newsletter-button:hover {
+      background-color: #be8c52;
+    }
+    
+    .newsletter-success {
+      background-color: #744c24;
+      border: 1px solid #5e3d1c;
+      padding: 0.75rem;
+      border-radius: 0.375rem;
+      text-align: center;
+    }
+    
+    .footer-separator {
+      position: relative;
+      display: flex;
+      align-items: center;
+      padding: 1.25rem 0;
+    }
+    
+    .footer-separator::before,
+    .footer-separator::after {
+      content: '';
+      flex-grow: 1;
+      border-top: 1px solid #744c24;
+    }
+    
+    .footer-separator span {
+      padding: 0 1rem;
+      color: #b5a090;
+      font-size: 0.875rem;
+    }
+    
+    .footer-bottom {
+      text-align: center;
+      padding-top: 2rem;
+      color: #b5a090;
+      font-size: 0.875rem;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header / Navbar -->
+  <header id="header">
+    <div class="container">
+      <nav class="navbar">
+        <a href="#" class="logo">
+          <div class="logo-circle">CU</div>
+          <span class="logo-text">Charles Ungsod</span>
+        </a>
+        
+        <ul class="nav-links">
+          <li><a href="#">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#testimonials">Testimonials</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="#" class="btn-primary">Resume</a></li>
+        </ul>
+        
+        <button class="mobile-menu-btn" aria-label="Toggle Menu">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="4" x2="20" y1="12" y2="12"/>
+            <line x1="4" x2="20" y1="6" y2="6"/>
+            <line x1="4" x2="20" y1="18" y2="18"/>
+          </svg>
+        </button>
+      </nav>
+    </div>
+    
+    <!-- Mobile menu -->
+    <div class="mobile-menu" id="mobile-menu">
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#testimonials">Testimonials</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="#" class="btn-primary">Resume</a></li>
+      </ul>
+    </div>
+  </header>
+  
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-bg">
+      <div class="hero-bg-image"></div>
+    </div>
+    
+    <div class="hero-content">
+      <div class="avatar">
+        <img src="/lovable-uploads/3c465608-22ef-41de-b445-601993784427.png" alt="Charles Ungsod">
+      </div>
+      <span class="welcome-text">Welcome to my portfolio</span>
+      <h1>Charles Ungsod</h1>
+      <p>Computer Science student passionate about creating elegant, responsive, and user-friendly web applications.</p>
+      <div class="hero-buttons">
+        <a href="#projects" class="btn-primary">View My Work</a>
+        <a href="#contact" class="btn-secondary">Contact Me</a>
+      </div>
+      
+      <div class="scroll-indicator">
+        <span class="scroll-text">Scroll Down</span>
+        <div class="scroll-icon">
+          <div class="scroll-dot"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- About Section -->
+  <section id="about" class="about">
+    <div class="container about-container">
+      <div class="about-content">
+        <span class="about-tag">ABOUT ME</span>
+        <h2 class="section-title">Computer Science Student with a Passion for Web Development</h2>
+        <p class="text-muted" style="margin-bottom: 1.5rem;">
+          I'm a dedicated Computer Science student with a focus on web development and software engineering. My academic journey has equipped me with strong foundations in algorithms, data structures, and various programming paradigms.
+        </p>
+        <p class="text-muted" style="margin-bottom: 1.5rem;">
+          Beyond my coursework, I'm passionate about applying theoretical knowledge to practical projects. I enjoy building responsive web applications and exploring new technologies to expand my skill set. I'm particularly interested in creating digital experiences that are both functional and aesthetically pleasing.
+        </p>
+        
+        <div class="stats">
+          <div class="stat">
+            <span class="stat-number">3+</span>
+            <span class="stat-label">Years Coding</span>
+          </div>
+          <div class="divider"></div>
+          <div class="stat">
+            <span class="stat-number">12+</span>
+            <span class="stat-label">Projects Completed</span>
+          </div>
+          <div class="divider"></div>
+          <div class="stat">
+            <span class="stat-number">5+</span>
+            <span class="stat-label">Hackathons</span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="about-image-container">
+        <div class="about-image-wrapper">
+          <div class="about-image-bg"></div>
+          <div class="about-image">
+            <div class="about-avatar">
+              <img src="/lovable-uploads/3c465608-22ef-41de-b445-601993784427.png" alt="Charles Ungsod">
+            </div>
+          </div>
+          <div class="about-badge">
+            <div class="about-badge-content">
+              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="m18 16 4-4-4-4"/>
+                <path d="m6 8-4 4 4 4"/>
+                <path d="m14.5 4-5 16"/>
+              </svg>
+              <div class="about-badge-text">
+                <h4>CS Student</h4>
+                <p>Learning & Building</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-brand">
+            <div class="footer-brand-circle">CU</div>
+            <span class="footer-brand-text">Charles Ungsod</span>
+          </div>
+          <p class="footer-description">
+            Computer Science student passionate about web development, software engineering, and creating user-friendly applications.
+          </p>
+          <div class="footer-socials">
+            <a href="#" class="social-link" aria-label="GitHub">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/>
+                <path d="M9 18c-4.51 2-5-2-7-2"/>
+              </svg>
+            </a>
+            <a href="#" class="social-link" aria-label="LinkedIn">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+                <rect width="4" height="12" x="2" y="9"/>
+                <circle cx="4" cy="4" r="2"/>
+              </svg>
+            </a>
+            <a href="#" class="social-link" aria-label="Twitter">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/>
+              </svg>
+            </a>
+            <a href="#" class="social-link" aria-label="Email">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect width="20" height="16" x="2" y="4" rx="2"/>
+                <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+        
+        <div>
+          <h4 class="footer-heading">Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#testimonials">Testimonials</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+        
+        <div>
+          <h4 class="footer-heading">Services</h4>
+          <ul class="footer-links">
+            <li><a href="#">Web Development</a></li>
+            <li><a href="#">Mobile Apps</a></li>
+            <li><a href="#">UI/UX Design</a></li>
+            <li><a href="#">API Development</a></li>
+            <li><a href="#">Consulting</a></li>
+          </ul>
+        </div>
+        
+        <div>
+          <h4 class="footer-heading">Newsletter</h4>
+          <p class="footer-description">Subscribe to receive updates about new projects, tech insights, and occasional coding tips.</p>
+          
+          <div id="newsletter-form-container">
+            <form id="newsletter-form" class="newsletter-form">
+              <input 
+                type="email" 
+                id="newsletter-email" 
+                class="newsletter-input" 
+                placeholder="Your email address" 
+                required
+              >
+              <button type="submit" class="newsletter-button">Join</button>
+            </form>
+          </div>
+          
+          <div id="newsletter-success" class="newsletter-success" style="display: none;">
+            <p>Thank you for subscribing!</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="footer-separator">
+        <span>Charles Ungsod</span>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>© <span id="current-year"></span> Charles Ungsod. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+  
+  <!-- JavaScript -->
+  <script>
+    // Set current year in footer
+    document.getElementById('current-year').textContent = new Date().getFullYear();
+    
+    // Mobile menu toggle
+    const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    
+    mobileMenuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('active');
+    });
+    
+    // Header scroll effect
+    const header = document.getElementById('header');
+    
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 10) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+    });
+    
+    // Newsletter form handling
+    const newsletterForm = document.getElementById('newsletter-form');
+    const newsletterFormContainer = document.getElementById('newsletter-form-container');
+    const newsletterSuccess = document.getElementById('newsletter-success');
+    
+    if (newsletterForm) {
+      newsletterForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        newsletterFormContainer.style.display = 'none';
+        newsletterSuccess.style.display = 'block';
+        
+        // Reset after 5 seconds
+        setTimeout(() => {
+          newsletterFormContainer.style.display = 'block';
+          newsletterSuccess.style.display = 'none';
+          newsletterForm.reset();
+        }, 5000);
+      });
+    }
+    
+    // Add animation classes when content enters viewport
+    document.addEventListener('DOMContentLoaded', () => {
+      // Simulate the loading effect like in the React version
+      setTimeout(() => {
+        document.querySelector('.hero-content').classList.add('loaded');
+      }, 300);
+    });
+  </script>
+</body>
 </html>

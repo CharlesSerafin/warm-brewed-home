@@ -2,6 +2,7 @@
 import { useEffect, useRef } from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
+import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 
 const About = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -63,13 +64,11 @@ const About = () => {
               <div className="w-full md:w-1/2 order-1 md:order-2 reveal">
                 <div className="relative">
                   <div className="absolute inset-0 bg-cafe-100 -translate-x-6 -translate-y-6 rounded-lg"></div>
-                  <div className="relative overflow-hidden rounded-lg">
-                    <img 
-                      src="https://images.unsplash.com/photo-1581472723648-909f4851d4ae?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" 
-                      alt="Developer workspace with laptop and code"
-                      className="w-full h-auto object-cover aspect-video"
-                      loading="lazy"
-                    />
+                  <div className="relative overflow-hidden rounded-lg flex items-center justify-center p-6 bg-white">
+                    <Avatar className="w-64 h-64 mx-auto border-4 border-primary/20">
+                      <AvatarImage src="/lovable-uploads/264e9c53-4039-4826-940f-4d6526cd81d3.png" alt="Charles Ungsod" className="object-cover" />
+                      <AvatarFallback>CU</AvatarFallback>
+                    </Avatar>
                   </div>
                   <div className="absolute -bottom-6 -right-6 bg-white rounded-lg p-4 shadow-lg">
                     <div className="flex items-center gap-3">

@@ -29,7 +29,7 @@ const Hero = () => {
       <div className="relative h-full z-10 flex flex-col justify-center items-center text-center text-white container-custom px-4">
         <div className={`transition-all duration-1000 delay-300 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
           <Avatar className="w-32 h-32 mx-auto mb-6 border-4 border-white/20">
-            <AvatarImage src="/lovable-uploads/3c465608-22ef-41de-b445-601993784427.png" alt="Charles Ungsod" />
+            <AvatarImage src="./lovable-uploads/3c465608-22ef-41de-b445-601993784427.png" alt="Charles Ungsod" />
             <AvatarFallback>CU</AvatarFallback>
           </Avatar>
           <span className="inline-block mb-4 text-sm md:text-base uppercase tracking-widest border-b border-white/30 pb-2">Welcome to my portfolio</span>

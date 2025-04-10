@@ -66,7 +66,7 @@ const About = () => {
                   <div className="absolute inset-0 bg-cafe-100 -translate-x-6 -translate-y-6 rounded-lg"></div>
                   <div className="relative overflow-hidden rounded-lg flex items-center justify-center p-6 bg-white">
                     <Avatar className="w-64 h-64 mx-auto border-4 border-primary/20">
-                      <AvatarImage src="/lovable-uploads/3c465608-22ef-41de-b445-601993784427.png" alt="Charles Ungsod" className="object-cover" />
+                      <AvatarImage src="./lovable-uploads/3c465608-22ef-41de-b445-601993784427.png" alt="Charles Ungsod" className="object-cover" />
                       <AvatarFallback>CU</AvatarFallback>
                     </Avatar>
                   </div>

@@ -60,15 +60,19 @@ const About = () => {
               <div className="absolute inset-0 bg-cafe-100 -translate-x-6 -translate-y-6 rounded-lg"></div>
               <div className="relative overflow-hidden rounded-lg">
                 <img 
-                  src="https://images.unsplash.com/photo-1581472723648-909f4851d4ae?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" 
+                  src="./images/workspace.jpg" 
                   alt="Developer workspace with laptop and code"
                   className="w-full h-auto object-cover aspect-video"
                   loading="lazy"
+                  onError={(e) => {
+                    const target = e.target as HTMLImageElement;
+                    target.src = "https://images.unsplash.com/photo-1581472723648-909f4851d4ae?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80";
+                  }}
                 />
               </div>
               <div className="absolute -bottom-6 -right-6 bg-white rounded-lg p-4 shadow-lg">
                 <div className="flex items-center gap-3">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="lucide lucide-code-2"><path d="m18 16 4-4-4-4"/><path d="m6 8-4 4 4 4"/><path d="m14.5 4-5 16"/></svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-code-2"><path d="m18 16 4-4-4-4"/><path d="m6 8-4 4 4 4"/><path d="m14.5 4-5 16"/></svg>
                   <div>
                     <h4 className="font-medium">CS Student</h4>
                     <p className="text-xs text-muted-foreground">Learning & Building</p>

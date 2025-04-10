@@ -45,13 +45,13 @@ const Navbar = () => {
             <Link to="/about" className="text-foreground hover:text-primary transition-colors">About</Link>
           </li>
           <li>
-            <a href="/#projects" className="text-foreground hover:text-primary transition-colors">Projects</a>
+            <a href="#projects" className="text-foreground hover:text-primary transition-colors">Projects</a>
           </li>
           <li>
-            <a href="/#testimonials" className="text-foreground hover:text-primary transition-colors">Testimonials</a>
+            <a href="#testimonials" className="text-foreground hover:text-primary transition-colors">Testimonials</a>
           </li>
           <li>
-            <a href="/#contact" className="text-foreground hover:text-primary transition-colors">Contact</a>
+            <a href="#contact" className="text-foreground hover:text-primary transition-colors">Contact</a>
           </li>
           <li>
             <a href="#" className="btn-primary">Resume</a>
@@ -95,7 +95,7 @@ const Navbar = () => {
           </li>
           <li>
             <a 
-              href="/#projects" 
+              href="#projects" 
               className="block py-2 px-4 hover:bg-secondary/50 rounded-md transition-colors"
               onClick={toggleMenu}
             >
@@ -104,7 +104,7 @@ const Navbar = () => {
           </li>
           <li>
             <a 
-              href="/#testimonials" 
+              href="#testimonials" 
               className="block py-2 px-4 hover:bg-secondary/50 rounded-md transition-colors"
               onClick={toggleMenu}
             >
@@ -113,7 +113,7 @@ const Navbar = () => {
           </li>
           <li>
             <a 
-              href="/#contact" 
+              href="#contact" 
               className="block py-2 px-4 hover:bg-secondary/50 rounded-md transition-colors"
               onClick={toggleMenu}
             >
